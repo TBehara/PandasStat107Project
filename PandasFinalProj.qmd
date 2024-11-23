@@ -13,11 +13,8 @@ Quarto enables you to weave together content and executable code into a finished
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
-<<<<<<< HEAD
 Nba_stats <- read.csv("./Teams_Estimated_Metrics_Season23_24.csv")
-=======
 1 + 2
->>>>>>> da3da52abd136d8191935e0a27478fca64e38819
 ```
 
 You can add options to executable code like this
