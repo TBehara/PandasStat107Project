@@ -69,3 +69,21 @@ plot(Nba_stats$E_AST_RATIO, Nba_stats$E_OFF_RATING, main = "Assist Ratio vs. Off
 abline(lm(E_OFF_RATING~E_AST_RATIO, data = Nba_stats), col = 'blue')
 ```
 By this graph, we can see that a team that has a higher ratio of assists correlates to a better offense. This means that a teams ability to put teammates in high percentage situations of making shots and getting assists leads to a better offensive rating, which then causes an NBA team to win more games.
+
+Another important statistic in NBA games is rebounding efficiency. Our dataset provides both offensive rebounding efficiency and defensive rebounding efficiency. The boxplots below represent the average efficiencies of the two categories
+```{r}
+boxplot(Nba_stats$E_OREB_PCT,
+        ylab = "Efficiency Percentage",
+        main = "Average Offensive Rebound Efficiency Percentages")
+boxplot(Nba_stats$E_DREB_PCT,
+        ylab = "Efficiency Percentage",
+        main = "Average Defensive Rebound Efficiency Percentages")
+```
+As shown in the two boxplots above, teams tend to have almost a 50% increase in defensive rebound efficiency than offensive rebound efficiency. This inclines that teams are much more successful at obtaining defensive rebounds over offensive rebounds. Now, let's dive deeper into defensive rebounding efficiency and see how it correlates with team success. 
+```{r}
+plot(Nba_stats$W, Nba_stats$E_DREB_PCT,
+     xlab = "Total Wins",
+     ylab = "Defensive Rebound Efficiency Percentages",
+     main = "Team Success vs. Defensive Rebound Efficiency")
+```
+Based on the graph above, there does seem to be a relationship between how many games a team wins versus how efficient they are at getting defensive rebounds. As the total amount of wins increase, defensive rebound efficiency percentages also increase. Based on our data, defensive rebounding efficiency is also a main contributor into a team's success. 
